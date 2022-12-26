@@ -45,3 +45,8 @@ jobs:
         coverage run -m unittest test_unit.py
         mkdir coverage
         coverage-lcov --output_file_path coverage/lcov.info
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
